@@ -11,12 +11,6 @@ pipeline {
         AWS_ECR_URL           = 'your-ecr-url' // Add this line for ECR URL
     }
 
-    stages {
-        stage('Checkout') {
-            steps {
-                git branch: 'main', url: 'https://github.com/sanketares/Task-2.git'
-            }
-        }
 
         stage('Build Docker Image') {
             steps {

@@ -10,12 +10,7 @@ pipeline {
         S3_BUCKET             = 'your-docker-images-bucket'
     }
 
-    stages {
-        stage('Checkout') {
-            steps {
-                git branch: 'main', url: 'https://github.com/sanketares/docker-terraform-jenkins'
-            }
-        }
+
 
         stage('Build Docker Image') {
             steps {

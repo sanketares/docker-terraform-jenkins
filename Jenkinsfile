@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/sanketares/Task-2.git'
+                git branch: 'main', url: 'https://github.com/sanketares/docker-terraform-jenkins'
             }
         }
 

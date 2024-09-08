@@ -2,9 +2,13 @@ pipeline {
     agent any
 
     environment {
+
+        AWS_ACCESS_KEY_ID     = credentials('aws-access-key-id')
+        AWS_SECRET_ACCESS_KEY = credentials('aws-secret-access-key')
+        GITHUB_TOKEN = credentials('git-token')
+        AWS_DEFAULT_REGION    = 'us-west-2'
         DOCKER_IMAGE = 'your-docker-image'
         S3_BUCKET = 'your-docker-images-bucket'
-        AWS_REGION = 'us-east-1'
     }
 
     stages {

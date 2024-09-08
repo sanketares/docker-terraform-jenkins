@@ -8,9 +8,15 @@ pipeline {
         AWS_DEFAULT_REGION    = 'us-west-2'
         DOCKER_IMAGE          = 'your-docker-image'
         S3_BUCKET             = 'your-docker-images-bucket'
-        AWS_ECR_URL           = 'your-ecr-url' // Add this line for ECR URL
+        AWS_ECR_URL           = 'your-ecr-url'
     }
 
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/sanketares/Task-2.git'
+            }
+        }
 
         stage('Build Docker Image') {
             steps {

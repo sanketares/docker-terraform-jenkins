@@ -10,6 +10,12 @@ pipeline {
         DOCKER_IMAGE = 'your-docker-image'
         S3_BUCKET = 'your-docker-images-bucket'
     }
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/sanketares/Task-2.git'
+            }
+       }
 
     stages {
         stage('Build Docker Image') {

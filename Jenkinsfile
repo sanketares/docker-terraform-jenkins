@@ -41,10 +41,12 @@ pipeline {
             steps {
                 script {
                     sh 'docker save ${DOCKER_IMAGE}:latest | gzip > ${DOCKER_IMAGE}.tar.gz'
+                    sh 'ls -l ${DOCKER_IMAGE}.tar.gz'  // Check if the tarball was created
                     sh 'aws s3 cp ${DOCKER_IMAGE}.tar.gz s3://${S3_BUCKET}/${DOCKER_IMAGE}.tar.gz'
                 }
             }
         }
+
     }
     
     post {
